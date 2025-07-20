@@ -127,7 +127,7 @@ A continuación se muestran capturas de pantalla de la aplicación funcionando t
 ### iOS
 [Descargar video](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/videos/remote_config_ios.mov)
 
-## Descagables
+## Descargables
 - [Descargar APK](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/release/todo-app.apk)
 - [Descargar IPA](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/release/todo-app.ipa)
 
