@@ -1,0 +1,93 @@
+.no-shadow {
+  box-shadow: none;
+  --box-shadow: none;
+}
+
+.no-shadow ion-toolbar {
+  --box-shadow: none;
+  box-shadow: none;
+  --background: var(--ion-color-primary);
+  color: white;
+}
+
+.page-content {
+  --background: var(--ion-color-primary); /* mismo color */
+  color: white; /* para texto dentro del contenido, si aplica */
+}
+.title-content {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 40px;
+}
+.icon-wrapper {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  border-radius: 100%;
+}
+.icon {
+  font-size: 25px;
+  color: var(--ion-color-primary);
+}
+.title-label {
+  font-size: 28px;
+  color: white;
+  margin-top: 8px;
+  font-weight: 800;
+}
+.subtitle-label {
+  margin-top: 4px;
+  font-size: 18px;
+  color: rgb(217, 217, 217);
+  font-weight: 400;
+}
+
+.content-list {
+  height: 100dvh;
+  overflow-y: auto;
+  background-color: white;
+  margin-top: 16px;
+  box-shadow: 1px -5px 21px -5px rgba(0, 0, 0, 0.251);
+  border-radius: 25px;
+}
+.trash-icon {
+  padding: 8px;
+  position: relative;
+  margin-left: 2px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.icon {
+  font-size: 20px;
+  color: #000;
+}
+
+.title-task,
+.date-task {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  display: block;
+}
+.edit-icon {
+  font-size: 25px;
+  color: white;
+}
+::ng-deep .custom-alert .alert-input {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #919191;
+}
+::ng-deep .custom-alert .alert-input:focus {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #919191;
+}

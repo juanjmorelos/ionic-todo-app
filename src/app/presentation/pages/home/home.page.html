@@ -1,0 +1,49 @@
+<ion-header class="no-shadow" [translucent]="true">
+  <ion-toolbar>
+    <ion-title>To Do App</ion-title>
+
+    <ion-buttons slot="end" *ngIf="homePageType === 'all'">
+      <ion-button (click)="setFilter('list')">
+        <ion-icon name="list-circle-outline" class="edit-icon"></ion-icon>
+      </ion-button>
+      <ion-button (click)="setFilter('grid')">
+        <ion-icon name="grid-outline" class="edit-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <grid-view
+      *ngIf="homePageType === 'category' || filter === 'grid'; else listView"
+      [groupedCategories]="groupedCategories"
+      [taskCounts]="taskCounts"
+      (onManageCategory)="manageTaskCategory($event)"
+      (onDeleteCategory)="deleteCategory($event)"
+    ></grid-view>
+
+    <ng-template #listView>
+      <app-list-view
+        [tasks]="tasks"
+        (onToggleTask)="toggleTaskState($event)"
+        (onDeleteTask)="deleteTask($event)"
+      ></app-list-view>
+    </ng-template>
+
+    <ion-fab class="fab">
+      <ion-fab-button id="open-action-sheet">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-action-sheet
+      trigger="open-action-sheet"
+      header="¿Qué deseas hacer?"
+      [buttons]="actionSheetButtons"
+    ></ion-action-sheet>
+
+  </div>
+</ion-content>

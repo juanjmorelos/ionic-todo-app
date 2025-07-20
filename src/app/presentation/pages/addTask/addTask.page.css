@@ -1,0 +1,32 @@
+.custom-textarea {
+  min-height: 80px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.padding {
+  padding-top: 24px;
+}
+.row {
+  margin-top: 16px;
+}
+.datetime-item {
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+  align-items: center;
+}
+
+.datetime-button-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.icon {
+  font-size: 24px;
+  color: #000;
+}

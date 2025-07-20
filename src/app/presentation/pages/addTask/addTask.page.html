@@ -1,0 +1,103 @@
+<ion-header class="no-shadow" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="padding">
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-textarea
+            label="¿Qué estás planeando?"
+            labelPlacement="stacked"
+            autoGrow="true"
+            class="custom-textarea"
+            fill="solid"
+            mode="md"
+            #task
+          ></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-item lines="none" class="datetime-item">
+          <div class="items">
+            <ion-icon
+              name="calendar-outline"
+              slot="start"
+              class="icon"
+            ></ion-icon>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          </div>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime
+                id="datetime"
+                presentation="date-time"
+                value="2023-11-02T01:22:00"
+                show-default-buttons="true"
+                cancelText="Cancelar"
+                doneText="Aceptar"
+                [formatOptions]="{
+                    date: {
+                      weekday: 'short',
+                      year: 'numeric',
+                      month: 'short',
+                      day: '2-digit',
+                    },
+                    time: {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    },
+                  }"
+                #datetime
+              ></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-item lines="none">
+          <div class="items">
+            <ion-icon
+              name="pricetag-outline"
+              slot="start"
+              class="icon"
+            ></ion-icon>
+            <ion-select
+              label="Categoría"
+              label-placement="floating"
+              fill="solid"
+              mode="md"
+              #category
+            >
+              <ion-select-option
+                *ngFor="let item of categories;"
+                [value]="item.id"
+              >
+                {{ item.category }}
+              </ion-select-option>
+            </ion-select>
+          </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button class="items" (click)="saveTask()">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-list class="list">
+  <ng-container *ngIf="tasks!.length > 0; else emptyBlock">
+    <ion-item *ngFor="let item of tasks" lines="none">
+      <!-- CONTENEDOR slot="end" para checkbox + trash -->
+      <div slot="end" class="actions-container">
+        <ion-checkbox
+          [checked]="item.state === 'done'"
+          [disabled]="item.state === 'expired'"
+          (ionChange)="toggleTaskState(item)"
+        ></ion-checkbox>
+      </div>
+
+      <ion-label class="task-content">
+        <div class="title-task">{{ item.task }}</div>
+        <div class="date-task">{{ formatDate(item.date) }}</div>
+
+        <div *ngIf="item.state === 'expired'" class="info-label expired">
+          Vencido
+        </div>
+        <div *ngIf="item.state === 'done'" class="info-label done">
+          Terminado
+        </div>
+      </ion-label>
+      <div class="trash-icon ion-activatable" (click)="deleteTask(item)" slot="start">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="trash-outline" class="icon"></ion-icon>
+      </div>
+    </ion-item>
+  </ng-container>
+
+  <ng-template #emptyBlock>
+    <empty-component></empty-component>
+  </ng-template>
+</ion-list>

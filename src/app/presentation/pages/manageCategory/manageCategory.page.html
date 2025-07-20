@@ -1,0 +1,30 @@
+<ion-header class="no-shadow" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="editCategory()">
+        <ion-icon name="create-outline" class="edit-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="page-content">
+  <div class="title-content">
+    <div class="icon-wrapper">
+      <ion-icon name="folder-open-outline" class="icon"></ion-icon>
+    </div>
+    <ion-label class="title-label">{{categoryName}}</ion-label>
+    <ion-label class="subtitle-label">{{tasks.length}} tareas</ion-label>
+  </div>
+
+  <div class="content-list">
+    <app-list-view
+      [tasks]="tasks"
+      (onToggleTask)="toggleTaskState($event)"
+      (onDeleteTask)="deleteTask($event)"
+    ></app-list-view>
+  </div>
+</ion-content>

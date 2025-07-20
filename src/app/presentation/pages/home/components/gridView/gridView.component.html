@@ -1,0 +1,32 @@
+<ion-grid class="grid">
+  <ng-container *ngIf="groupedCategories!.length > 0; else emptyBlock">
+    <ng-container *ngFor="let group of groupedCategories">
+      <ion-row>
+        <ng-container *ngFor="let item of group">
+          <ion-col size="6">
+            <div
+              class="card-container ripple-parent ion-activatable"
+              (click)="manageTaskCategory(item)"
+            >
+              <ion-ripple-effect></ion-ripple-effect>
+              <div class="icons-container">
+                <ion-icon name="folder-open-outline" class="icon"></ion-icon>
+                <div (click)="deleteCategory(item)">
+                  <ion-icon name="ellipsis-vertical" class="icon-sub"></ion-icon>
+                </div>
+              </div>
+              <ion-label class="category-title">{{ item.category }}</ion-label>
+              <ion-label class="category-subtitle">
+                {{ taskCounts[item.id] || 0 }} tareas
+              </ion-label>
+            </div>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #emptyBlock>
+    <empty-component></empty-component>
+  </ng-template>
+</ion-grid>

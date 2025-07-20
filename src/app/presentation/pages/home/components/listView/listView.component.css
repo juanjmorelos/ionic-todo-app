@@ -1,0 +1,28 @@
+.list {
+  padding: 10px 25px;
+  padding-top: 15px;
+}
+
+.title-task {
+  font-size: 19px;
+}
+
+.date-task {
+  color: rgb(126, 126, 126);
+  margin-top: 4px;
+}
+.info-label {
+  margin-top: 4px;
+  font-weight: 800;
+}
+.info-label.expired {
+  color: #a30000;
+}
+.info-label.done {
+  color: #21a300;
+}
+.actions-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre checkbox y trash */
+}
