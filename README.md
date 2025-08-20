@@ -14,9 +14,7 @@ Su diseño fue pensado para ofrecer una interfaz clara, minimalista y fácil de 
 
 1. [Cómo ejecutar la app](#cómo-ejecutar-la-app)  
 2. [Capturas de pantalla](#capturas-de-pantalla)  
-3. [Video Remote Config](#conexion-firebase-remote-config)  
 4. [Descargables (APK e IPA)](#descargables)
-5. [Respuestas a las preguntas](#respuestas-a-las-preguntas)
 
 ## Cómo ejecutar la aplicación 
 ### Requisitos previos
@@ -121,22 +119,7 @@ A continuación se muestran capturas de pantalla de la aplicación funcionando t
   <img src="media/images/ios/image_10.png" width="22%" />
 </p>
 
-## Conexion Firebase Remote Config
-### Android
-[Descargar video](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/videos/remote_config_android.mov)
-### iOS
-[Descargar video](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/videos/remote_config_ios.mov)
-
 ## Descargables
 - [Descargar APK](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/release/todo-app.apk)
 - [Descargar IPA](https://github.com/juanjmorelos/ionic-todo-app/blob/main/media/release/todo-app.ipa)
-
-## Respuestas a las preguntas
-- ***¿Cuáles fueron los principales desafíos que enfrentaste al implementar las nuevas funcionalidades?***
-R/ Uno de los principales retos fue utilzar cordova en lugar de capacitor que es el recomendado por el propio desarrollador de ionic, cordova me generaba conflictos con versiones de angular tanto que me hizo bajar hasta Angular 16
-- ***¿Qué técnicas de optimización de rendimiento aplicaste y por qué?***
-R/ Se empleó `@ionic/storage-angular` para guardar datos localmente sin requerir constantemente accesos a recursos externos. Esto mejora el rendimiento en dispositivos móviles. Se diseñaron estructuras reactivas pero controladas con
-`ngIf`, `ngFor`, etc. para evitar renderizados innecesarios. Se utilizaron componentes reutilizables centralizando la lógica y evitando el código duplicado.
-- ***¿Cómo aseguraste la calidad y mantenibilidad del código?*** R/ Se implemenataron interfaces (`Category` y `UserTask`) para asegurar que los datos tenga siempre una estructura consistente. Se separaron las responsabilidades, la lógica
-del negocio se separo en servicios `StorageService`. Se utilizó *Conventional Commits* para mantener un historial de cambios claros.
 
